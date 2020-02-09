@@ -11,8 +11,13 @@ class BoardsController < ApplicationController
   end
 
   def create
-    board = current_user.boards.create(board_params)
-    redirect_to board
+    board = current_user.boards.build(board_params)
+    if board.save
+      redirect_to board, notice: 'スレッドを新規作成しました'
+    else
+      flash.now[:alert] = 'スレッドの作成に失敗しました'
+      render :new
+    end
   end
   
   def show
@@ -22,13 +27,17 @@ class BoardsController < ApplicationController
   end
 
   def update
-    @board.update(board_params)
-    redirect_to @board
+    if @board.update(board_params)
+      redirect_to @board, notice: '編集内容を保存しました'
+    else
+      flash.now[:alert] = '編集内容の保存に失敗しました'
+      render :edit
+    end
   end
 
   def destroy
     @board.delete
-    redirect_to boards_path
+    redirect_to boards_path, notice: 'スレッドを削除しました'
   end
   
 

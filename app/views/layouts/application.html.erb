@@ -10,8 +10,14 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    <!-- フラッシュメッセージ部分 -->
+    <% flash.each do |key, value| %>
+        <% key = "alert alert-primary" if key == "notice" %>
+        <% key = "alert alert-danger" if key == "alert" %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+     <% end %>
+    
     <div class="container">
       <%= yield %>
     </div>
