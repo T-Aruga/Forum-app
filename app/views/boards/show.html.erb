@@ -7,5 +7,10 @@
 
 <%= render @board %>
 
+<div class="p-comment__list">
+  <div class="p-comment__listTitle">コメント</div>
+  <%= render @board.comments %>
+</div>
+
 
 <%= render 'comments/form', comment: @comment, board: @board %>
