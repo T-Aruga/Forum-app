@@ -37,7 +37,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board.delete
+    @board.destroy
     redirect_to boards_path, notice: 'スレッドを削除しました'
   end
   
@@ -45,7 +45,7 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:name, :title, :body)
+    params.require(:board).permit(:name, :title, :body, tag_ids: [])
   end
   
   def set_board

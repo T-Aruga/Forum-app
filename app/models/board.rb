@@ -1,8 +1,8 @@
 class Board < ApplicationRecord
   belongs_to :user
   
-  has_many :comments, dependent: :destroy
-  has_many :board_tags
+  has_many :comments, dependent: :delete_all
+  has_many :board_tags, dependent: :delete_all
   has_many :tags, through: :board_tags
   
   
