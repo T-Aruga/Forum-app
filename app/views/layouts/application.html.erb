@@ -10,7 +10,8 @@
   </head>
 
   <body>
-    
+    <!-- header -->
+     <%= render 'shared/header' %>
     <!-- フラッシュメッセージ部分 -->
     <% flash.each do |key, value| %>
         <% key = "alert alert-primary" if key == "notice" %>

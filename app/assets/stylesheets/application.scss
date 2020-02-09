@@ -19,32 +19,18 @@
 @import 'font-awesome';
 
 
+body {
+  background-color: #fff;
+}
+
+
 #error_explanation {
   color: red;
 }
  
- 
- 
-.loginPage {
-  &_contents {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    &_title {
-      margin-top: 12vh;
-    }
-    &_btn {
-      display: block;
-      max-width: 400px;
-      padding: 20px;
-      margin: 0 auto;
-      border-radius: 30px;
-      background: #fd5068;
-      color: #fff;
-    }
-  }
+.nav-item a {
+  color: black;
+  margin-right: 10px;
 }
 
 
@@ -83,5 +69,26 @@
     font-size: 14px;
     margin: 0 12px;
   }
+}
+
+.boards__table {
+  tr:hover {
+    cursor: pointer;
+  }
+}
+
+.boards__linkBox {
+  a {
+    margin: 0 8px;
+  }
+}
+
+.boards__searchForm {
+  display: inline-block;
+}
+
+.boards__select {
+  display: inline-block;
+  width: auto;
 }
 
