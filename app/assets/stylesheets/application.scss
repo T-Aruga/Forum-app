@@ -14,4 +14,30 @@
  *= require_self
  */
  
- @import "bootstrap";
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+ 
+ 
+ 
+.loginPage {
+  &_contents {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    &_title {
+      margin-top: 12vh;
+    }
+    &_btn {
+      display: block;
+      max-width: 400px;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 30px;
+      background: #fd5068;
+      color: #fff;
+    }
+  }
+}
