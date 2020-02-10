@@ -1,6 +1,6 @@
-  <div class="p-comment__item">
+  <div class="comment-item">
   <p><%= simple_format(comment.content) %></p>
-  <div class="p-comment__bottomLine">
+  <div class="comment-bottom">
     <span><%= comment.name %></span>
     <span><%= comment.created_at.to_s(:datetime_jp) %></span>
     <span><%= link_to '削除', board_comment_path(comment.board_id, comment.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %></span>

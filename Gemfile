@@ -43,5 +43,6 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'kaminari'
 gem 'rails-i18n'
+gem 'faker'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'

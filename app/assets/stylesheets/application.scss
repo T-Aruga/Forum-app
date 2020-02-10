@@ -34,34 +34,34 @@ body {
 }
 
 
-.p-comment__formBox {
+.form-wrapper {
   margin: 30px auto;
   border: 5px solid #e8e8e8;
   padding: 25px;
   border-radius: 14px;
 }
 
-.p-comment__formTitle {
+.form-title {
   border-bottom: 2px solid #dfdfdf;
   padding-bottom: 5px;
 }
 
-.p-comment__listTitle {
+.comment-listTitle {
   border-bottom: 2px solid #dfdfdf;
   padding-bottom: 5px;
 }
 
-.p-comment__list {
+.comment-list {
   margin: 38px 0;
   padding: 20px;
 }
 
-.p-comment__item {
+.comment-item {
   padding: 18px;
   border-bottom: 2px dotted #dfdfdf;
 }
 
-.p-comment__bottomLine {
+.comment-bottom {
   font-size: 15px;
   text-align: right;
 
@@ -71,23 +71,23 @@ body {
   }
 }
 
-.boards__table {
+.boards-table {
   tr:hover {
     cursor: pointer;
   }
 }
 
-.boards__linkBox {
+.boards-link {
   a {
     margin: 0 8px;
   }
 }
 
-.boards__searchForm {
+.boards-search {
   display: inline-block;
 }
 
-.boards__select {
+.boards-select {
   display: inline-block;
   width: auto;
 }

@@ -1,6 +1,6 @@
 
-<div class="p-comment__formBox">
-  <p class="p-comment__formTitle">コメント記入</p>
+<div class="form-wrapper">
+  <p class="form-title">コメント記入</p>
   <%= form_for comment, url: board_comments_path(board) do |f| %>
   
     <%= render 'shared/error_messages', object: f.object %>
@@ -13,6 +13,6 @@
       <%= f.label :content, 'コメント' %>
       <%= f.text_area :content, class: 'form-control', rows: 4 %>
     </div>
-    <%= f.submit '送信', class: 'btn btn-primary' %>
+    <%= f.submit '送信', class: 'btn btn-primary form-control text-center' %>
   <% end %>
 </div>
