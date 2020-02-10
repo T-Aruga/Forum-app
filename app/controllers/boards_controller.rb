@@ -1,5 +1,7 @@
 class BoardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_board, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:update, :destroy]
   
   
   def index
@@ -25,9 +27,6 @@ class BoardsController < ApplicationController
     @comment = Comment.new(board_id: @board.id)
   end
 
-  def edit
-  end
-
   def update
     if @board.update(board_params)
       redirect_to @board, notice: '編集内容を保存しました'
@@ -45,11 +44,19 @@ class BoardsController < ApplicationController
 
   private
 
-  def board_params
-    params.require(:board).permit(:name, :title, :body, tag_ids: [])
-  end
-  
-  def set_board
-    @board = Board.find(params[:id])
-  end
+    def board_params
+      params.require(:board).permit(:name, :title, :body, tag_ids: [])
+    end
+    
+    def set_board
+      @board = Board.find(params[:id])
+    end
+    
+    def ensure_correct_user
+      unless current_user.id == @board.user_id
+        flash[:alert] = '権限がありません'
+        redirect_back(fallback_location: request.referer)
+      end
+    end
+
 end

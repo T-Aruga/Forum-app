@@ -1,6 +1,5 @@
 class HomesController < ApplicationController
-  def index
-  end
+  skip_before_action :authenticate_user!
   
   def search
     @q = Board.includes(:comments).search(search_params)
