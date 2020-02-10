@@ -25,9 +25,11 @@
         </li>
       <% end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="検索ワードを入力.." aria-label="Search">
-      <button class="my-2 my-sm-0 btn btn-primary" type="submit">検索</button>
-    </form>
+      <dl class="searchbox mr-auto">
+        <%= search_form_for @q, url: search_path do |f| %>
+          <dt><%= f.text_field :title_or_comments_content_cont, placeholder: '検索ワードを入力...' %></dt>
+          <dd><%= f.submit "検索" , class: 'my-2 my-sm-0 btn btn-primary search-btn'%></dd>
+        <% end %>
+      </dl>
   </div>
 </nav>

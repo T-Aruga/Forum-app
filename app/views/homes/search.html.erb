@@ -1,0 +1,19 @@
+<h3>スレッド検索結果</h3><br />
+<% if @boards.empty? %>
+  <p><%= "#{params[:q][:title_or_comments_content_cont]}  に一致する検索結果は見つかりませんでした" %></p><br />
+  <p><%= "検索のヒント:" %></p><br />
+  <ul>
+    <li><%= "キーワードに誤字・脱字がないか確認します。"%></li>
+    <li><%= "別のキーワードを試してみます。"%></li>
+  </ul>
+<% else %>
+  <p><%= "#{@boards.total_count}件の検索結果があります" %></p>
+<% end %>
+
+<hr class="my-4">
+
+<% @boards.each do |board| %>
+  <p><%= board.title %></p>
+<% end %>
+
+<%= paginate @boards, class: "paginate" %>
