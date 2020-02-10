@@ -6,7 +6,7 @@ https://still-waters-38745.herokuapp.com/
 
 簡単ログインボタンからそのままログイン可能です。
 
-## 設計書リング
+## 設計書リンク
 
 * 機能詳細　https://drive.google.com/file/d/1LwDoFFaIKBqrkvRKksuITztQsZo-3LgW/view?usp=sharing
 * ER図 https://drive.google.com/file/d/1s3MokpvprM-vPtRkq_dXZdMCEY66vMjA/view?usp=sharing
