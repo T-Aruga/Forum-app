@@ -1,24 +1,26 @@
-# README
+# 5ch_clone(Forum-app)
+スレッドの作成やコメントの投稿、タグ付与によるシンプルな機能を持った掲示板サイトです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## リンク
+https://still-waters-38745.herokuapp.com/
 
-Things you may want to cover:
+簡単ログインボタンからそのままログイン可能です。
 
-* Ruby version
+## 使用技術
 
-* System dependencies
+* Ruby 2.6.3, Rails 5.2.3
+* Puma
+* heroku
+* SASS, Bootstrap, JQuery
 
-* Configuration
+## 機能一覧
 
-* Database creation
+* ユーザー登録、ログイン機能(devise)
+* スレッド作成、編集、削除機能
+* レス（コメント）投稿、削除機能
+* スレッド、レス検索機能(Ransack)
+* 管理者機能
 
-* Database initialization
+## 画面サンプル
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Image from Gyazo](https://i.gyazo.com/6e89f1c103a0f86b6afed75ddf100840.png)](https://gyazo.com/6e89f1c103a0f86b6afed75ddf100840)
