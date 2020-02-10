@@ -2,6 +2,9 @@
   <h1>スレッド編集</h1>
   <div class="ml-auto boards-link">
     <%= link_to '一覧', boards_path, class: 'btn btn-outline-dark' %>
+    <% if current_user.id == @board.user_id %>
+      <td><%= link_to '削除', @board, class: 'btn btn-danger', method: :delete %></td>
+    <% end %>
   </div>
 </div>
 <%= render partial: 'form', locals: { board: @board } %>
