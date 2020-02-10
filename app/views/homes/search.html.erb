@@ -14,6 +14,7 @@
 
 <% @boards.each do |board| %>
   <p><%= board.title %></p>
+  <p><%= link_to '詳細', board, class: 'btn btn-primary' %></p>
 <% end %>
 
 <%= paginate @boards, class: "paginate" %>

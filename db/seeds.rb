@@ -6,29 +6,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# テストユーザー
-
 User.create!(
-    name: "Jo Inoue",
-    email: 'test@gmail.com',
+    name: "John Snow",
+    email: 'testuser@gmail.com',
     password: 'aaaaaa'
 )
 
 
 (1..50).each do |i|
-    User.create(name: "ユーザー#{i}", email: "test#{i}@test.com", password: 'aaaaaa')
+    User.create(name: Faker::Name.name, email: "test#{i}@test.com", password: 'aaaaaa')
 end
 
-(1..50).each do |i|
-    Board.create(name: "ユーザー#{i}", title: "タイトル#{i}", body: "本文#{i}", user_id: i)
+(1..20).each do |i|
+    Board.create(name: Faker::Name.name, title: Faker::Lorem.word, body: Faker::Lorem.sentence, user_id: Faker::Number.between(from: 1, to: 20))
 end
+
+(1..100).each do |i|
+    Comment.create(name: "名無し#{i}さん", content: Faker::Lorem.sentence, user_id: Faker::Number.between(from: 1, to: 50), board_id: Faker::Number.between(from: 1, to: 20))
+end
+
+
 
 
 Tag.create([
-    { name: 'Ruby' },
-    { name: 'Ruby on Rails4' },
-    { name: 'Ruby on Rails5' },
-    { name: 'Python2' },
-    { name: 'Python3' },
-    { name: 'Django2' }
+    { name: '政治・経済' },
+    { name: '趣味' },
+    { name: 'スポーツ' },
+    { name: 'グルメ' },
+    { name: '音楽' },
+    { name: '芸能' },
+    { name: 'ゲーム' },
+    { name: '文芸' },
+    { name: '恋愛' },
+    { name: 'キャリア' }
   ])
+  
+  (1..50).each do |i|
+      BoardTag.create(tag_id: Faker::Number.between(from: 1, to: 10), board_id: Faker::Number.between(from: 1, to: 20))
+  end
