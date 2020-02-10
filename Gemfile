@@ -44,5 +44,7 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'faker'
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan', '~> 2.0'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'
