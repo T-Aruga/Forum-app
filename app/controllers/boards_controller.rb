@@ -14,8 +14,8 @@ class BoardsController < ApplicationController
   end
 
   def create
-    board = current_user.boards.build(board_params)
-    if board.save
+    @board = current_user.boards.build(board_params)
+    if @board.save
       redirect_to board, notice: 'スレッドを新規作成しました'
     else
       flash.now[:alert] = 'スレッドの作成に失敗しました'

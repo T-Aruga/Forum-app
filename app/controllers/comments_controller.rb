@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   
   def create
-    comment = current_user.comments.build(comment_params)
-    if comment.save 
+    @comment = current_user.comments.build(comment_params)
+    if @comment.save 
       flash[:notice] = 'コメントを投稿しました'
     else
       flash[:alert] = '投稿に失敗しました'
